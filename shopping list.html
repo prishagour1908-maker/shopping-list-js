@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: linear-gradient(to right, coral, pink);
+            color: white;
+            text-align:center;
+            font-family: cursive;
+            font-size: 35px;
+        }
+        button{
+             font-size: 35px;
+             background-color: pink;
+        }
+        input{
+            height:100px;
+            width:300px;
+        }
+        div{
+            border-radius: 10px;
+            box-shadow: 3px 5px 10px solid purple;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Shopping List App!</h1>
+    <br>
+    <div>
+    <input id="textt" type="text">
+    <button onclick="additem()">Add Item</button>
+    <button onclick="deleteitem()">Delete Item</button>
+    </div>
+    <br>
+    <div>
+    <h3>Your Items</h3>
+
+    <ul id="list">
+
+    </ul>
+</div>
+    <script>
+        
+        function additem(){
+            let data = document.getElementById('textt').value;
+          if(data != ""){
+            document.getElementById('list').innerHTML += "<li>" + data + "</li>";
+            document.getElementById('textt').value = "";
+          }
+        }
+
+        function deleteitem(){
+            let lists = document.getElementById('list');
+            list.removeChild(list.lastElementChild);
+        }
+    </script>
+</body>
+</html>
